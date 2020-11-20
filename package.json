@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/darryltait/campsights/issues"
   },
-  "homepage": "https://github.com/darryltait/campsights#readme"
+  "homepage": "https://github.com/darryltait/campsights#readme",
+  "dependencies": {
+    "mongoose": "^5.10.15"
+  }
 }

@@ -2,16 +2,23 @@
 const express = require('express');
 const port = 3000;
 
-const indexRouter = require('./routes/index');
-
 const morgan = require('morgan');
+const session = require('express-session');
+const passport = require('passport');
+
+require('dotenv').config();
 
 // create the express app
 const app = express();
 
-
 // configure server settings
 require('./config/database');
+require('./config/passport');
+
+// require our routes
+const indexRouter = require('./routes/index');
+const campgroundsRouter = require('./routes/campgrounds');
+ 
 
 app.set('view engine', 'ejs');
 
@@ -19,10 +26,22 @@ app.set('view engine', 'ejs');
 // mount middleware
 app.use(morgan('dev'));
 app.use(express.static('public'));
+app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 
 // mount routes
 app.use('/', indexRouter);
+app.use('/', campgroundsRouter);
 
 
 // tell the app to listen

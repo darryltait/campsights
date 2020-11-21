@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const db = mongoose.connection;
 
 // connect to the database server
-mongoose.connect('mongodb://localhost/campgrounds', {
+mongoose.connect(process.env.DATABASE_URL || 'mongodb://localhost/campgrounds', {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
@@ -14,4 +14,8 @@ mongoose.connect('mongodb://localhost/campgrounds', {
 // set up a connection listener
 db.on('connected', function(){
     console.log(`Connected to mongodb on ${db.host}:${db.port}`);
+});
+
+db.on('error', function(err) {
+    console.log(`Encountered an error: ${err.message}`);
 });

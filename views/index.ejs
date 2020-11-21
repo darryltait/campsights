@@ -1,12 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campsights</title>
+  <title>Campsights</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
+  <!-- Materialize Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Materialize CSS Framework -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- JavaScript for Materialize -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
+
 <body>
-    <h1>Campsights</h1>
-    <a href="/campgrounds">See the campgrounds</a>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper green darken-4">
+        <a href="" class="brand-logo left">Campsights</a>
+        <ul class="right">
+            <li><a href="/">See All Campgrounds</a></li>
+            <!-- Place Login UI Here -->
+         
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <header class="container">
+    <h2>Welcome to Campsights</h2>
+    <h4>Here will eventually be an index page of campgrounds, hopefully</h4>
+  </header>
+  <% campgrounds.forEach(function(cg) { %>
+
+    <p> <%= cg.cgName %></p> 
+    <p> <%= cg.location %></p> 
+    <p> <%= cg.sites %></p> 
+    <p> <%= cg.amenities %></p> 
+    <p> <%= cg.attractions %></p> 
+    <% });  %>
+   
+
+
+
 </body>
 </html>

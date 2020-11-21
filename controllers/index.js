@@ -1,3 +1,4 @@
+const Campground = require('../models/campground');
 
 module.exports = {
 
@@ -7,5 +8,11 @@ module.exports = {
 
 
 function index(req,res) {
-    res.render('index');
+    Campground.find({}, function(err, campgrounds) {
+        res.render('index', {
+
+            campgrounds,
+        });
+
+    });
 }

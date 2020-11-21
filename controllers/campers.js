@@ -2,8 +2,7 @@ const Camper = require('../models.camper');
 
 module.exports = {
     index,
-    addReview,
-    delReview,
+   
 }
 
 function index(req, res) {

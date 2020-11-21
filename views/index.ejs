@@ -22,22 +22,34 @@
         <ul class="right">
             <li><a href="/">See All Campgrounds</a></li>
             <!-- Place Login UI Here -->
+            <li>
+                <% if(user) { %>
+                  <a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a>
+                <% } else {%>
+                  <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+                <% } %>
+              </li>
+           
          
         </ul>
       </div>
     </nav>
   </div>
   <header class="container">
-    <h2>Welcome to Campsights</h2>
-    <h4>Here will eventually be an index page of campgrounds, hopefully</h4>
+    <h2>Welcome to Campsights </h2>
+    <h4>Here will eventually be an index page of campgrounds... hopefully</h4>
   </header>
   <% campgrounds.forEach(function(cg) { %>
 
-    <p> <%= cg.cgName %></p> 
-    <p> <%= cg.location %></p> 
-    <p> <%= cg.sites %></p> 
-    <p> <%= cg.amenities %></p> 
-    <p> <%= cg.attractions %></p> 
+    <img src="/images/<%=cg.cgName%>.png" alt="Brooklyn Lake">
+    <p> Campground: <%= cg.cgName %></p> 
+    <p> Location: <%= cg.location %></p> 
+    <p> Number of sites: <%= cg.sites %></p> 
+    <p> Amenities: <%= cg.amenities %></p> 
+    <p> Local attractions: <%= cg.attractions %></p> 
+    <p><%=cg._id%></p>
+    <a href="campgrounds/<%=cg._id%>">Details</a>
+    
     <% });  %>
    
 

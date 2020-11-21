@@ -6,6 +6,8 @@ const campgroundsCtrl = require('../controllers/campgrounds');
 
 router.get('/campgrounds', campgroundsCtrl.index);
 
+router.get('/:id', campgroundsCtrl.show);
+
 // POST /facts
 // We will already have access to the logged in student on
 // the server, therefore do not use: /students/:id/facts

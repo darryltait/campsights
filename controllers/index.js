@@ -12,6 +12,7 @@ function index(req,res) {
         res.render('index', {
 
             campgrounds,
+            user: req.user
         });
 
     });

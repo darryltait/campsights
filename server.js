@@ -18,6 +18,7 @@ require('./config/passport');
 // require our routes
 const indexRouter = require('./routes/index');
 const campgroundsRouter = require('./routes/campgrounds');
+const reviewsRouter = require('./routes/reviews');
  
 
 app.set('view engine', 'ejs');
@@ -41,7 +42,8 @@ app.use(passport.session());
 
 // mount routes
 app.use('/', indexRouter);
-app.use('/campgrounds', campgroundsRouter);
+app.use('/', reviewsRouter);
+app.use('/', campgroundsRouter);
 
 
 // tell the app to listen

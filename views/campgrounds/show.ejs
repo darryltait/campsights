@@ -1,12 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campground show</title>
-</head>
+    <head>
+        <title>Campsights</title>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
+        <!-- Materialize Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Materialize CSS Framework -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="/css/style.css" />
+        <!-- JavaScript for Materialize -->
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      </head>
 <body>
-    <h1>Campground Show</h1>
-    <h3><%=campground.location%></h3>
+    <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper green darken-4">
+            <a href="" class="brand-logo left">Campsights</a>
+            <ul class="right">
+                <li><a href="/">See All Campgrounds</a></li>
+                <!-- Place Login UI Here -->
+                <li>
+                    <% if(user) { %>
+                      <a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a>
+                    <% } else {%>
+                      <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+                    <% } %>
+                  </li>
+               
+             
+            </ul>
+          </div>
+        </nav>
+      </div>
+    <h1><%=campground.cgName%></h1>
+    <img src="/images/<%=campground.cgName%>.png" alt="Brooklyn Lake">
+    <p><%=campground.cgName%></p>
+    <p> Location: <%= campground.location %></p> 
+    <p> Number of sites: <%= campground.sites %></p> 
+    <p> Amenities: <%= campground.amenities %></p> 
+    <p> Local attractions: <%= campground.attractions %></p> 
+    <p><%=campground._id%></p>
+    <p><%=user%></p>
+
+    <!-- <form action="/reviews" method="post">
+        <label for="">Add a Comment:
+            <input type="text"name="reviews">
+
+        </label>
+        <input type="submit" value="Add review">
+    
+    </form>  -->
+  
+    <% if(user._id.equals(user && user._id)) { %>
+        <form action="/campgrounds/<%=campground._id%>/reviews" method="POST">
+        <input type="text" name="text" id="">
+        <button type="submit">add review</button>
+        </form>
+    <% } %>
+  
+
 </body>
 </html>

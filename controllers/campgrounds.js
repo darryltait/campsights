@@ -1,6 +1,8 @@
 
 const Campground = require('../models/campground');
 
+// const Camper = require('../models/camper');
+
 module.exports = {
     index,
     show,
@@ -17,8 +19,10 @@ function index(req,res) {
 function show(req,res) {
     Campground.findById(req.params.id, function(err, campground){
         res.render('campgrounds/show', {
-            campground
-        })
+            campground,
+            user: req.user
+
+        });
     });
 }
 

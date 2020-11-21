@@ -7,7 +7,8 @@ const Schema = mongoose.Schema;
 
 // define reviewSchema
 const reviewSchema = new mongoose.Schema({
-    text: String
+    text: String,
+    campgroundId: {type: Schema.Types.ObjectId, ref: 'Campground'}
 }, {
     timestamps: true});
 

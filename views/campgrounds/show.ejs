@@ -34,14 +34,25 @@
         </nav>
       </div>
     <h1><%=campground.cgName%></h1>
-    <img src="/images/<%=campground.cgName%>.png" alt="Brooklyn Lake">
+    <p>image to go here</p>
+    <!-- <img src="/images/<%=campground.cgName%>.png" alt="Brooklyn Lake"> -->
     <p><%=campground.cgName%></p>
     <p> Location: <%= campground.location %></p> 
     <p> Number of sites: <%= campground.sites %></p> 
     <p> Amenities: <%= campground.amenities %></p> 
     <p> Local attractions: <%= campground.attractions %></p> 
     <p><%=campground._id%></p>
-    <p><%=user%></p>
+
+
+   <h4>Reviews:</h4>
+    <% reviewsArr.forEach(function(rev) { %>
+       
+            <p><%=rev.text%> - <i><%=user.name%></i></p>
+
+        
+     <% }); %>    
+    
+   
 
     <!-- <form action="/reviews" method="post">
         <label for="">Add a Comment:

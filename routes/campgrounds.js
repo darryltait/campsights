@@ -13,8 +13,6 @@ router.get('/campgrounds/:id', campgroundsCtrl.show);
 // the server, therefore do not use: /students/:id/facts
 //router.post('/campgrounds', campgroundsCtrl.addCampground);
 
-// DELETE /facts/:id
-router.delete('/:id', campgroundsCtrl.delCampground);
 
 module.exports = router;
 

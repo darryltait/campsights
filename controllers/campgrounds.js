@@ -21,17 +21,21 @@ function show(req,res) {
         Camper.find({}, function(err, campers){
             //let reviewsArr = [];
             let reviewsArr = [];
+            let namesArr = [];
+            
             campers.forEach(function(camper){
+                let name = camper.name;
                 camper.reviews.forEach(function(rev){
                     //if(rev.campgroundId == campground._id){
                         //if(rev.campgroundId == '5fb8794c4df31baeca70b223'){
                         if(rev.campgroundId == req.params.id){
 
-                        console.log(rev.campgroundId); //will print the campgroundId
-                        console.log('reqparamsid', req.params.id);
+                        console.log(rev.campgroundId, name); //will print the campgroundId
+                        //console.log('reqparamsid', req.params.id); - prints reqparamsid
                         //console.log(campground._id);  // prints the first campgroundID = 5fb876954df31baeca70b222
                         //console.log(req.params.id);  // prints the above ^
                         reviewsArr.push(rev);
+                        namesArr.push(name);
 
                         //console.log(reviewsArr)
 
@@ -47,7 +51,8 @@ function show(req,res) {
             res.render('campgrounds/show', {
                 campground,
                 user: req.user,
-                reviewsArr
+                reviewsArr,
+                namesArr
     
             });
         });

@@ -3,6 +3,7 @@ const express = require('express');
 const port = 3000;
 
 const morgan = require('morgan');
+const methodOverride = require('method-override');
 const session = require('express-session');
 const passport = require('passport');
 
@@ -26,6 +27,7 @@ app.set('view engine', 'ejs');
 
 // mount middleware
 app.use(morgan('dev'));
+app.use(methodOverride('_method'));
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));

@@ -48,7 +48,7 @@
    <% if(reviewsArr.length) { %>
     <% reviewsArr.forEach(function(rev) { %>
        
-            <p><%=rev.text%> - <i><%=user.name%></i></p>
+            <p><%=rev.text%> - </p>
 
         
      <% }); %>   
@@ -58,14 +58,7 @@
     
    
 
-    <!-- <form action="/reviews" method="post">
-        <label for="">Add a Comment:
-            <input type="text"name="reviews">
-
-        </label>
-        <input type="submit" value="Add review">
-    
-    </form>  -->
+  
   
     <% if(user._id.equals(user && user._id)) { %>
         <form action="/campgrounds/<%=campground._id%>/reviews" method="POST">

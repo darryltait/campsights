@@ -37,18 +37,15 @@
     </nav>
   </div>
   <header class="container">
-    <h2>Welcome to Campsights </h2>
-    <h4>Here will eventually be a photo and brief description</h4>
-  </header>
+    <h1>Campgrounds Index page</h1>
+<% campgrounds.forEach(function(cg) { %>
+    <p><%= cg.cgName %></p>
+    <p><%= cg.location %></p>
+    <p><%= cg.user %></p>
+    <a href="/campgrounds/<%=cg._id%>">Details</a>
 
+<% }) %>
 
-
-    <footer>
-      <p>footer info here</p>
-    </footer>
-   
-
-
-
+    
 </body>
 </html>

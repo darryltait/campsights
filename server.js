@@ -45,7 +45,7 @@ app.use(passport.session());
 // mount routes
 app.use('/', indexRouter);
 app.use('/', reviewsRouter);
-app.use('/', campgroundsRouter);
+app.use('/campgrounds', campgroundsRouter);
 
 
 // tell the app to listen

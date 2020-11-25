@@ -37,18 +37,19 @@
     </nav>
   </div>
   <header class="container">
-    <h2>Welcome to Campsights </h2>
-    <h4>Here will eventually be a photo and brief description</h4>
-  </header>
+    <h1>New Campgrounds page</h1>
+    <p>Add a campground!</p>
 
+    <form action="/campgrounds" method="post">
+    <input type="text" name ="cgName">
+    <label for="">Campground Name</label>
+    <input type="text" name="location">
+    <label for="">Location</label>
+    <label for="details">Details</label>
+    <textarea name="details" id="details" cols="30" rows="10"></textarea>
+    <input type="submit" value="Add Campground">
 
-
-    <footer>
-      <p>footer info here</p>
-    </footer>
-   
-
-
-
+    </form>
+    
 </body>
 </html>

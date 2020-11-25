@@ -1,8 +1,13 @@
-// require our modules
-const mongoose = require('mongoose');
 
-// create a shortcut variable
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+
+// define reviewSchema
+const reviewSchema = new Schema({
+    text: String,
+    createdBy: {type: Schema.Types.ObjectId, ref: 'Camper'},
+}, 
+    {timestamps: true});
 
 // define our campgroundSchema
 const campgroundSchema = new Schema({
@@ -13,19 +18,12 @@ const campgroundSchema = new Schema({
     location: {
         type: String,  
     },
-    sites: {
-        type: Number,
-        required: true,
-        min: 1
-    },
-    amenities: {
-        type: String
-    },
-    attractions: {
-        type: String
-    }
+    details: String,
+    reviews: [reviewSchema],
+    imageURL: String,
+    createdBy: {type: Schema.Types.ObjectId, ref: 'Camper'},
 
-
+    
 }, {timestamps: true});
 
 // export our schema as a model with mongoose.model

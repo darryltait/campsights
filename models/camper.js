@@ -6,18 +6,17 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // define reviewSchema
-const reviewSchema = new mongoose.Schema({
-    text: String,
-    campgroundId: {type: Schema.Types.ObjectId, ref: 'Campground'}
-}, {
-    timestamps: true});
+// const reviewSchema = new mongoose.Schema({
+//     text: String,
+//     campgroundId: {type: Schema.Types.ObjectId, ref: 'Campground'}
+// }, {
+//     timestamps: true});
 
 // define our camperSchema
-const camperSchema = new mongoose.Schema({
+const camperSchema = new Schema({
     name: String,
     email: String,
     avatarURL: String,
-    reviews: [reviewSchema],
     googleId: String
 }, {
     timestamps: true

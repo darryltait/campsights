@@ -6,8 +6,8 @@ const campgroundsCtrl = require('../controllers/campgrounds');
 //router.get('/campgrounds', campgroundsCtrl.index);
 
 router.get('/', campgroundsCtrl.index);
-//router.get('/campgrounds/:id', campgroundsCtrl.show);
 router.get('/new', campgroundsCtrl.new);
+router.get('/:id', campgroundsCtrl.show);
 router.post('/', campgroundsCtrl.create);
 
 // POST /facts

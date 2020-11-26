@@ -39,11 +39,15 @@
   <header class="container">
     <h1>Campgrounds Index page</h1>
 <% campgrounds.forEach(function(cg) { %>
-    <p><%= cg.cgName %></p>
-    <p><%= cg.location %></p>
-    <p><%= cg.user %></p>
-    <a href="/campgrounds/<%=cg._id%>">Details</a>
+    <div>
+    <p>Campground: <%= cg.cgName %></p>
+    
+    <p>Location: <%= cg.location %></p>
+    <p>Added by: <%= cg.createdBy.name %></p>
 
+   
+    <a href="/campgrounds/<%=cg._id%>">Details</a>
+</div>
 <% }) %>
 
     

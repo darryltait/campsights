@@ -6,9 +6,9 @@ const reviews = require('./reviews');
 
 module.exports = {
     index,
-    //show,
     new: newCampground,
     create,
+    show,
     
 };
 
@@ -27,12 +27,29 @@ function newCampground(req, res){
 }
 
 function create(req,res){
-    //req.body.createdBy = req.user._id;
+    req.body.createdBy = req.user._id;
     Campground.create(req.body, function(err, campground){
         res.redirect('/campgrounds');
     });
 
 }
+
+function show(req,res) {
+    Campground.findById(req.params.id)
+    .populate('createdBy').exec(function(err, campground){
+        console.log(campground);
+        res.render('campgrounds/show', {campground, user: req.user});
+    });
+}
+
+// function show(req,res) {
+//     Campground.findById(req.params.id, function(err, campground){
+//         console.log(campground);
+//         res.render('campgrounds/show', {campground, user: req.user});
+//     });
+// }
+
+
 
 // function show(req,res) {
 //     Campground.findById(req.params.id, function(err, campground){

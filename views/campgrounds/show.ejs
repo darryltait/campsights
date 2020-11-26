@@ -18,7 +18,7 @@
           <div class="nav-wrapper green darken-4">
             <a href="" class="brand-logo left">Campsights</a>
             <ul class="right">
-                <li><a href="/">See All Campgrounds</a></li>
+                <li><a href="/campgrounds">See All Campgrounds</a></li>
                 <!-- Place Login UI Here -->
                 <li>
                     <% if(user) { %>
@@ -38,34 +38,22 @@
     <!-- <img src="/images/<%=campground.cgName%>.png" alt="Brooklyn Lake"> -->
     <p><%=campground.cgName%></p>
     <p> Location: <%= campground.location %></p> 
-    <p> Number of sites: <%= campground.sites %></p> 
-    <p> Amenities: <%= campground.amenities %></p> 
-    <p> Local attractions: <%= campground.attractions %></p> 
+    <p>Details: <%= campground.details %></p>
     <p><%=campground._id%></p>
 
 
-   <h4>Reviews:</h4>
-   <% if(reviewsArr.length) { %>
-    <% reviewsArr.forEach(function(rev) { %>
-       
-            <p><%=rev.text%> - </p>
 
-        
-     <% }); %>   
-    <% } else { %>
-        <p>No reviews yet</p>
-    <% } %>
     
    
 
-  
-  
     <% if(user._id.equals(user && user._id)) { %>
         <form action="/campgrounds/<%=campground._id%>/reviews" method="POST">
         <input type="text" name="text" id="" required>
         <button type="submit">add review</button>
         </form>
     <% } %>
+  
+ 
   
 
 </body>

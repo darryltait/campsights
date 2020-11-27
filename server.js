@@ -40,6 +40,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// require our routes
+// const indexRouter = require('./routes/index');
+// const campgroundsRouter = require('./routes/campgrounds');
+// const reviewsRouter = require('./routes/reviews');
+
 
 
 // mount routes

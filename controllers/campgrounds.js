@@ -9,6 +9,7 @@ module.exports = {
     new: newCampground,
     create,
     show,
+    delete: deleteCampground,
     
 };
 
@@ -39,6 +40,17 @@ function show(req,res) {
     .populate('createdBy').exec(function(err, campground){
         console.log(campground);
         res.render('campgrounds/show', {campground, user: req.user});
+    });
+}
+
+function deleteCampground(req,res) {
+    Campground.findByIdAndDelete(req.params.id, function(err, campground) {
+        if(err) {
+            console.log(err)
+        } else{
+            console.log('deleted: ', campground);
+            res.redirect('/campgrounds');
+        }
     });
 }
 

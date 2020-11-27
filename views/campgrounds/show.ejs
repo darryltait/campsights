@@ -34,12 +34,15 @@
         </nav>
       </div>
     <h1><%=campground.cgName%></h1>
-    <p>image to go here</p>
-    <!-- <img src="/images/<%=campground.cgName%>.png" alt="Brooklyn Lake"> -->
+    <img src="<%= campground.imageURL %>" alt="Pawnee Pass Trail">
     <p><%=campground.cgName%></p>
     <p> Location: <%= campground.location %></p> 
     <p>Details: <%= campground.details %></p>
-    <p><%=campground._id%></p>
+    <p>campground id: <%=campground._id%></p>
+    <p>Added by: <%=campground.createdBy.name%></p>
+    <p>user is: <%=user.name%></p>
+
+
 
 
 

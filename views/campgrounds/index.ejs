@@ -41,12 +41,20 @@
 <% campgrounds.forEach(function(cg) { %>
     <div>
     <p>Campground: <%= cg.cgName %></p>
+    <img src="<%= cg.imageURL %>" alt="Pawnee Pass Trail">
     
     <p>Location: <%= cg.location %></p>
     <p>Added by: <%= cg.createdBy.name %></p>
+    <p>user is: <%=user.name%></p>
+
 
    
     <a href="/campgrounds/<%=cg._id%>">Details</a>
+    <% if(user.name === cg.createdBy.name) { %>
+    <form action="/campgrounds/<%=cg._id%>?_method=DELETE" method="post">
+        <button type="submit">X</button>
+    </form>
+<% } %>
 </div>
 <% }) %>
 

@@ -10,6 +10,10 @@ router.get('/new', campgroundsCtrl.new);
 router.get('/:id', campgroundsCtrl.show);
 router.post('/', campgroundsCtrl.create);
 router.delete('/:id', campgroundsCtrl.delete);
+//try below
+router.get('/:id/edit', campgroundsCtrl.edit);
+router.put('/:id', campgroundsCtrl.update);
+
 
 // POST /facts
 // We will already have access to the logged in student on

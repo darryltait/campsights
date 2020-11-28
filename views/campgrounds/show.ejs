@@ -40,8 +40,8 @@
     <p>Details: <%= campground.details %></p>
     <p>campground id: <%=campground._id%></p>
     <p>Added by: <%=campground.createdBy.name%></p>
-    <p>user is: <%=user.name%></p>
 
+    <p>user is: <%=user.name%></p>
 
 
 
@@ -49,10 +49,11 @@
     
    
 
-    <% if(user._id.equals(user && user._id)) { %>
-        <form action="/campgrounds/<%=campground._id%>/reviews" method="POST">
-        <input type="text" name="text" id="" required>
-        <button type="submit">add review</button>
+    <% if(user.name === campground.createdBy.name) { %>
+        <form action="/campgrounds/<%=campground._id%>/edit" method="GET">
+
+        <!-- <input type="text" name="text" id="" required> -->
+        <button type="submit">Edit Campground</button>
         </form>
     <% } %>
   

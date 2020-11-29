@@ -1,64 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Campsights</title>
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
-        <!-- Materialize Icons -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!-- Materialize CSS Framework -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link rel="stylesheet" href="/css/style.css" />
-        <!-- JavaScript for Materialize -->
-        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-      </head>
-<body>
-    <div class="navbar-fixed">
-        <nav>
-          <div class="nav-wrapper green darken-4">
-            <a href="" class="brand-logo left">Campsights</a>
-            <ul class="right">
-                <li><a href="/campgrounds">See All Campgrounds</a></li>
-                <!-- Place Login UI Here -->
-                <li>
-                    <% if(user) { %>
-                      <a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a>
-                    <% } else {%>
-                      <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-                    <% } %>
-                  </li>
-               
-             
-            </ul>
-          </div>
-        </nav>
-      </div>
-    <h1><%=campground.cgName%></h1>
-    <img src="<%= campground.imageURL %>" alt="Pawnee Pass Trail">
-    <p><%=campground.cgName%></p>
-    <p> Location: <%= campground.location %></p> 
-    <p>Details: <%= campground.details %></p>
-    <p>campground id: <%=campground._id%></p>
-    <p>Added by: <%=campground.createdBy.name%></p>
+<%- include('../partials/header') %>
 
-    <p>user is: <%=user.name%></p>
+<div id="show">
+<h2><%=campground.cgName%></h2>
+<img src="<%= campground.imageURL %>" alt="Pawnee Pass Trail">
+<p> Location: <%= campground.location %></p> 
+<br>
+<p>Details: <%= campground.details %></p>
+<br>
+<p class="credit"><i>Added by: <%=campground.createdBy.name%></i></p>
+<br>
 
-
-
-
-    
-   
-
-    <% if(user.name === campground.createdBy.name) { %>
-        <form action="/campgrounds/<%=campground._id%>/edit" method="GET">
-
+<% if(user.name === campground.createdBy.name) { %>
+    <form action="/campgrounds/<%=campground._id%>/edit" method="GET">
+        
         <!-- <input type="text" name="text" id="" required> -->
         <button type="submit">Edit Campground</button>
-        </form>
+    </form>
     <% } %>
-  
- 
-  
-
-</body>
-</html>
+    </div>
+    
+    <%- include('../partials/footer') %>

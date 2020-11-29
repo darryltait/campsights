@@ -1,63 +1,33 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-  <title>Campsights</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
-  <!-- Materialize Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Materialize CSS Framework -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="/css/style.css" />
-  <!-- JavaScript for Materialize -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</head>
+<%- include("../partials/header") %>
 
-<body>
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper green darken-4">
-        <a href="" class="brand-logo left">Campsights</a>
-        <ul class="right">
-            <li><a href="/campgrounds">See All Campgrounds</a></li>
-            <li><a href="/campgrounds/new">Add a Campground</a></li>
-            <!-- Place Login UI Here -->
-            <li>
-                <% if(user) { %>
-                  <a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a>
-                <% } else {%>
-                  <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-                <% } %>
-              </li>
-           
-         
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <header class="container">
-    <h1>Campgrounds Index page</h1>
+<h2>Campgrounds</h2>
+      <main id="container">
 <% campgrounds.forEach(function(cg) { %>
-    <div>
-    <p>Campground: <%= cg.cgName %></p>
-    <img src="<%= cg.imageURL %>" alt="Pawnee Pass Trail">
+    <div class="box">
+    <h5><%= cg.cgName %></h5>
+    <img src="<%= cg.imageURL %>" alt="<%=cg.cgName%>">
     
     <p>Location: <%= cg.location %></p>
-    <p>Added by: <%= cg.createdBy.name %></p>
-    <p>user is: <%=user.name%></p>
-
-
    
+
+
+   <div class="box-bottom">
     <a href="/campgrounds/<%=cg._id%>">Details</a>
     <% if(user.name === cg.createdBy.name) { %>
     <form action="/campgrounds/<%=cg._id%>?_method=DELETE" method="post">
-        <button type="submit">X</button>
+        <button type="submit">Delete</button>
     </form>
 <% } %>
 </div>
+</div>
 <% }) %>
 
-    
+</main>
+
+<footer class="green darken-4">
+  <p>&copy; 2022 Campsights</p>
+</footer>
 </body>
 </html>
+    

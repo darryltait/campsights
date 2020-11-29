@@ -1,57 +1,24 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-  <title>Campsights</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
-  <!-- Materialize Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Materialize CSS Framework -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="/css/style.css" />
-  <!-- JavaScript for Materialize -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</head>
+<%- include('../partials/header') %>
 
-<body>
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper green darken-4">
-        <a href="" class="brand-logo left">Campsights</a>
-        <ul class="right">
-            <li><a href="/campgrounds">See All Campgrounds</a></li>
-            <li><a href="/campgrounds/new">Add a Campground</a></li>
-            <!-- Place Login UI Here -->
-            <li>
-                <% if(user) { %>
-                  <a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a>
-                <% } else {%>
-                  <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-                <% } %>
-              </li>
-           
-         
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <header class="container">
-    <h1>New Campgrounds page</h1>
-    <p>Add a campground!</p>
+  <header class="container" id="new">
+    <h2>Add a campground!</h2>
 
     <form action="/campgrounds" method="post">
-      <input type="text" name="imageURL">
-      <label for="">URL to image of campground</label>
-    <input type="text" name ="cgName">
-    <label for="">Campground Name</label>
-    <input type="text" name="location">
+      <label for="">Campground Name</label>
+    <input type="text" name ="cgName" required>
     <label for="">Location</label>
+    <input type="text" name="location" required>
+    <label for="">URL to image of campground</label>
+    <input type="text" name="imageURL">
     <label for="details">Details</label>
-    <textarea name="details" id="details" cols="30" rows="10"></textarea>
-    <input type="submit" value="Add Campground">
+    <textarea name="details" id="details" cols="30" rows="10" required></textarea>
+    <!-- <input type="submit" value="Add Campground"> -->
+    <button type="submit">Add Campground</button>
+
 
     </form>
+    </header>
     
-</body>
-</html>
+    
+<%- include('../partials/footer') %>

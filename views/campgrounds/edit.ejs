@@ -1,26 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit a campground</title>
-</head>
-<body>
-    <h1>Here you can edit a campground</h1>
-    <h1>Edit <%=campground.cgName%></h1>
+<%- include('../partials/header') %>
+<header class="container" id="new">
 
-    <p>Edit Location</p>
+    <h2>Edit <%=campground.cgName%></h2>
+
     <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST">
-        <input type="text" name="location" value="<%=campground.location%>">
-        <label for="details">Details</label>
-        <textarea name="details" id="details" cols="30" rows="10"></textarea>
+        <label for="details">Edit Details</label>
+        <textarea name="details" id="details" cols="30" rows="10" value="<%=campground.details%>"></textarea>
+        <label for="imageURL">Edit Image URL</label>
+        <input type="text" name="imageURL" value="<%=campground.imageURL%>">
         <!-- <p>Edit Image URL</p>
+        <input type="text" name="imageURL"> -->
+        <!-- <input type="submit" value="Update campground"> -->
+        <button type="submit">Edit Campground</button>
 
-<input type="text" name="imageURL"> -->
-        <input type="submit" value="Update campground">
     
     </form>
+    </header>
 
     
-</body>
-</html>
+<%- include('../partials/footer') %>

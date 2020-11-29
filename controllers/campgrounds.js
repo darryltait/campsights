@@ -59,7 +59,7 @@ function deleteCampground(req,res) {
 
 function edit(req,res) {
     Campground.findById(req.params.id, function(err, campground){
-        res.render('campgrounds/edit', {campground});
+        res.render('campgrounds/edit', {campground, user: req.user});
     });
 }
 
@@ -85,6 +85,7 @@ function update(req,res) {
         console.log(campground.location);
         campground.location = req.body.location;
         campground.details = req.body.details;
+        campground.imageURL = req.body.imageURL;
         campground.save(function(err){
             res.redirect(`/campgrounds/${campground._id}`);
         });

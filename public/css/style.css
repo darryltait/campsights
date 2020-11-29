@@ -1,15 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 100vh;
+    width: 100%;
+    font-family: Helvetica;
+}
+
+#home-bkg {
+    background-image: url('/images/campsights_bkg.png');
+    background-size: cover;
+}
+
+#index-bkg {
+    display: flex;
+      flex-direction: column;
+      background-image: url('/images/campsights_index_bkg.png');
+      background-size: cover;
+      /* flex-grow: 1; */
+      padding-top: 25px;
+  }
+
+  #show {
+    margin-left: 25px;
+    min-height: 100vh;
+  }
+  #new {
+      min-height: 100vh;
+      padding-bottom: 40px;
+  }
+
+
 .brand-logo {
     margin-left: 15px;
-    font-family: 'Baloo', cursive;
+    font-family: 'Balsamiq Sans', cursive;
   }
   
   .card .card-content .card-title {
     margin-bottom: 10px;
   }
   
-  header {
+  /* header {
     height: 100px;
+  } */
+
+  h1 {
+    font-family: 'Balsamiq Sans', cursive;
+
   }
+
+  main {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding-top: 25px;
+  }
+
+  #welcome {
+      margin: 0 auto;
+  }
+
+  #intro {
+    margin: 0px auto 0px;
+    width: 75%;
+
+  }
+
+  .box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+            width: 350px;
+      height: 350px;
+      background-color: rgba(27,94,32,.5);
+      margin: 10px;
+
+      
+  }
+  
+
+  .box > img {
+    display: block;
+    width: 80%;
+      margin: 10px auto;
+  }
+  .box-bottom {
+      display: flex;
+      margin-top: 10px;
+
+}
+.box-bottom > a {
+    color: rgb(27,94,32);
+    color: black;
+    text-decoration-line: underline;
+    font-size: 15px;
+
+    margin-right: 15px;
+}
+
+button {
+    margin-bottom: 15px;
+}
+
+ 
+
   .collection-item {
     display: flex;
     justify-content: space-between;
@@ -24,4 +131,19 @@
     position: relative;
     top: -5px;
   }
+  .credit {
+      color: gray;
+  }
+
+  footer {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+        color: rgba(255,255,255,.5);
+      width: 100%;
+  }
+  #index-foot {
+    bottom: -0px;
+}
   

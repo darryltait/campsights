@@ -10,6 +10,7 @@
     width: 100%;
     justify-content: space-evenly;
 }
+
 body {
     display: flex;
     flex-direction: column;
@@ -25,85 +26,89 @@ body {
     background-size: cover;
 }
 
-#index-bkg {
-    display: flex;
-      flex-direction: column;
-      background-image: url('/images/campsights_index_bkg.png');
-      background-size: cover;
-      /* flex-grow: 1; */
-      padding-top: 25px;
-  }
 
-  #show {
-    margin-left: 25px;
-    min-height: 100vh;
-  }
-  #new {
-      min-height: 100vh;
-      padding-bottom: 40px;
-  }
+
+
+#show {
+    margin-left: 50px;
+    width: 80%;
+    flex-grow: 1;
+}
+
+#show-image {
+    max-width: 60%;
+    height: auto;
+
+}
+
+#new {
+    flex-grow: 1;
+}
 
 
 .brand-logo {
     margin-left: 15px;
     font-family: 'Balsamiq Sans', cursive;
-  }
-  
-  .card .card-content .card-title {
-    margin-bottom: 10px;
-  }
-  
-  /* header {
-    height: 100px;
-  } */
+}
 
-  h1 {
+.index-title {
+    margin-left: 50px;
+}
+
+.card .card-content .card-title {
+    margin-bottom: 10px;
+}
+
+
+
+h1,
+h2 {
     font-family: 'Balsamiq Sans', cursive;
 
-  }
+}
 
-  main {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      padding-top: 25px;
-  }
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
 
-  #welcome {
-      margin: 0 auto;
-  }
+#welcome {
+    margin: 25px auto;
+}
 
-  #intro {
+#intro {
     margin: 0px auto 0px;
     width: 75%;
 
-  }
+}
 
-  .box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-            width: 350px;
-      height: 350px;
-      background-color: rgba(27,94,32,.5);
-      margin: 10px;
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    height: 350px;
+    border: 3px solid rgb(27, 94, 32);
+    border-radius: 10px;
+    margin: 10px;
 
-      
-  }
-  
-
-  .box > img {
-    display: block;
-    width: 80%;
-      margin: 10px auto;
-  }
-  .box-bottom {
-      display: flex;
-      margin-top: 10px;
 
 }
-.box-bottom > a {
-    color: rgb(27,94,32);
+
+
+.box>img {
+    width: 80%;
+    margin: 10px auto;
+}
+
+.box-bottom {
+    display: flex;
+    margin-top: 10px;
+
+}
+
+.box-bottom>a {
     color: black;
     text-decoration-line: underline;
     font-size: 15px;
@@ -115,35 +120,37 @@ button {
     margin-bottom: 15px;
 }
 
- 
+.button-add {
+    margin-top: 15px;
 
-  .collection-item {
+}
+
+
+
+.collection-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  #search-row form {
+}
+
+#search-row form {
     padding-top: 20px;
-  }
-  
-  .student-name {
+}
+
+.student-name {
     position: relative;
     top: -5px;
-  }
-  .credit {
-      color: gray;
-  }
-
-  footer {
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-        color: rgba(255,255,255,.5);
-      width: 100%;
-  }
-  #index-foot {
-    bottom: -0px;
 }
-  
+
+.credit {
+    color: gray;
+}
+
+footer {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, .5);
+    width: 100%;
+}

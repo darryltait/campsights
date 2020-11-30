@@ -8,8 +8,8 @@ module.exports = {
 
 
 
-function index(req,res) {
-    Campground.find({}, function(err, campgrounds) {
+function index(req, res) {
+    Campground.find({}, function (err, campgrounds) {
         res.render('index', {
 
             // campgrounds,

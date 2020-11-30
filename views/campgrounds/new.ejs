@@ -1,24 +1,23 @@
-
 <%- include('../partials/header') %>
 
-  <header class="container" id="new">
-    <h2>Add a campground!</h2>
+<header class="container" id="new">
+  <h2>Add a Campsight!</h2>
 
-    <form action="/campgrounds" method="post">
-      <label for="">Campground Name</label>
-    <input type="text" name ="cgName" required>
+  <form action="/campgrounds" method="post">
+    <label for="">Campsight Name</label>
+    <input type="text" name="cgName" required>
     <label for="">Location</label>
     <input type="text" name="location" required>
-    <label for="">URL to image of campground</label>
+    <label for="">URL to image of Campsight. (You can use a service like imgur to do this. Check out Imgur.com)</label>
     <input type="text" name="imageURL">
     <label for="details">Details</label>
     <textarea name="details" id="details" cols="30" rows="10" required></textarea>
-    <!-- <input type="submit" value="Add Campground"> -->
-    <button type="submit">Add Campground</button>
+    <br>
+    <button class="button-add" type="submit">Add Campsight</button>
 
 
-    </form>
-    </header>
-    
-    
+  </form>
+</header>
+
+
 <%- include('../partials/footer') %>

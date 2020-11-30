@@ -1,33 +1,30 @@
-
 <%- include("../partials/header") %>
 
-<h2>Campgrounds</h2>
-      <main id="container">
-<% campgrounds.forEach(function(cg) { %>
+<h2 class="index-title">Campsights</h2>
+<main id="container">
+    <% campgrounds.forEach(function(cg) { %>
     <div class="box">
-    <h5><%= cg.cgName %></h5>
-    <img src="<%= cg.imageURL %>" alt="<%=cg.cgName%>">
-    
-    <p>Location: <%= cg.location %></p>
-   
+        <h5><%= cg.cgName %></h5>
+        <img src="<%= cg.imageURL %>" alt="<%=cg.cgName%>">
 
+        <p>Location: <%= cg.location %></p>
 
-   <div class="box-bottom">
-    <a href="/campgrounds/<%=cg._id%>">Details</a>
-    <% if(user.name === cg.createdBy.name) { %>
-    <form action="/campgrounds/<%=cg._id%>?_method=DELETE" method="post">
-        <button type="submit">Delete</button>
-    </form>
-<% } %>
-</div>
-</div>
-<% }) %>
+        <div class="box-bottom">
+            <a href="/campgrounds/<%=cg._id%>">Details</a>
+            <% if(user.name === cg.createdBy.name) { %>
+            <form action="/campgrounds/<%=cg._id%>?_method=DELETE" method="post">
+                <button type="submit">Delete</button>
+            </form>
+            <% } %>
+        </div>
+    </div>
+    <% }) %>
 
 </main>
 
 <footer class="green darken-4">
-  <p>&copy; 2022 Campsights</p>
+    <p>&copy; 2022 Campsights</p>
 </footer>
 </body>
+
 </html>
-    

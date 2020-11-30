@@ -1,10 +1,12 @@
-const Camper = require('../models.camper');
+// const Camper = require('../models.camper');
 
-module.exports = {
-    // index,
-    addReview,
-   
-}
+// MAY ADD SOME CAMPER FEATURE LATER
+
+// module.exports = {
+//     // index,
+//     addReview,
+
+// }
 
 // function index(req, res) {
 //     console.log(req.user);
@@ -16,9 +18,9 @@ module.exports = {
 //     });
 // }
 
-    function addReview(req,res) {
-        req.user.reviews.push(req.body);
-        req.user.save(function(err) {
-            res.redirect('/campgrounds/show');
-        });
-    }
+// function addReview(req,res) {
+//     req.user.reviews.push(req.body);
+//     req.user.save(function(err) {
+//         res.redirect('/campgrounds/show');
+//     });
+// }

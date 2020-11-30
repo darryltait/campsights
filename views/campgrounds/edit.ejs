@@ -5,17 +5,15 @@
 
     <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST">
         <label for="details">Edit Details</label>
-        <textarea name="details" id="details" cols="30" rows="10" value="<%=campground.details%>"></textarea>
+        <textarea name="details" id="details" cols="30" rows="10"><%=campground.details%></textarea>
         <label for="imageURL">Edit Image URL</label>
         <input type="text" name="imageURL" value="<%=campground.imageURL%>">
-        <!-- <p>Edit Image URL</p>
-        <input type="text" name="imageURL"> -->
-        <!-- <input type="submit" value="Update campground"> -->
-        <button type="submit">Edit Campground</button>
 
-    
+        <button type="submit">Edit Campsight</button>
+
+
     </form>
-    </header>
+</header>
 
-    
+
 <%- include('../partials/footer') %>

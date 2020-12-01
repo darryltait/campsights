@@ -23,7 +23,7 @@ const campgroundSchema = new Schema({
     imageURL: String,
     createdBy: {type: Schema.Types.ObjectId, ref: 'Camper'},
 
-    
+
 }, {timestamps: true});
 
 // export our schema as a model with mongoose.model

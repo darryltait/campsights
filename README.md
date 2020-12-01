@@ -6,11 +6,11 @@ Campsights is an app that shows you where others like to go camping and let's yo
 
 Main page
 
-![Getting Started](./public/images/campsights_home.png)
+![Getting Started](./public/images/cs_home.png)
 
 Index page
 
-![Getting Started](./public/images/campsights_index.png)
+![Getting Started](./public/images/cs_index.png)
 
 ## Technologies Used
 
@@ -37,3 +37,4 @@ https://trello.com/b/RU4DuiiF/campsights
 
 - Allow users to leave comments
 - Make sizes of images uniform
+- Add a default image when none are provided

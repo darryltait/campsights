@@ -1,10 +1,10 @@
 <%- include("../partials/header") %>
 
-<h2 class="index-title">Campsights</h2>
+<h2 class="index-title">All Campsights</h2>
 <main id="container">
     <% campgrounds.forEach(function(cg) { %>
     <div class="box">
-        <h5><%= cg.cgName %></h5>
+        <h5 class="cg"><%= cg.cgName %></h5>
         <img src="<%= cg.imageURL %>" alt="<%=cg.cgName%>">
 
         <p>Location: <%= cg.location %></p>

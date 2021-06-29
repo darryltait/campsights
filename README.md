@@ -6,7 +6,7 @@ Campsights is an app that shows you where others like to go camping and let's yo
 
 Main page
 
-![Getting Started](./public/images/cs_home.png)
+![Getting Started](./public/images/COTW_home.png)
 
 Index page
 

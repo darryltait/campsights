@@ -3,21 +3,28 @@
 <header class="container" id="new">
   <h2>Add a Campsight!</h2>
 
-  <form action="/campgrounds" method="post">
-    <label for="">Campsight Name</label>
-    <input type="text" name="cgName" required>
-    <label for="">Location</label>
-    <input type="text" name="location" required>
-    <label for="">URL to image of Campsight. (You can use a service like imgur to do this. Check out Imgur.com)</label>
-    <input type="text" name="imageURL">
-    <label for="details">Details</label>
-    <textarea name="details" id="details" cols="30" rows="10" required></textarea>
-    <br>
+  <form id="info" action="/campgrounds" method="post">
+    <label class="label-text" for="">Campsight Name</label>
+    <input class="input-text" type="text" name="cgName" required />
+    <label class="label-text" for="">Location</label>
+    <input class="input-text" type="text" name="location" required />
+    <label class="label-text" for=""
+      >URL to image of Campsight. (You can use a service like imgur to do this.
+      Check out Imgur.com)</label
+    >
+    <input class="input-text" type="text" name="imageURL" />
+    <label class="label-text" for="details">Details</label>
+    <textarea
+      name="details"
+      class="input-text"
+      id="details"
+      cols="30"
+      rows="20"
+      required
+    ></textarea>
+    <br />
     <button class="button-add" type="submit">Add Campsight</button>
-
-
   </form>
 </header>
-
 
 <%- include('../partials/footer') %>

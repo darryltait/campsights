@@ -2,13 +2,28 @@
 <header class="container" id="new">
   <h2>Edit <%=campground.cgName%></h2>
 
-  <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST">
+  <form
+    id="info"
+    action="/campgrounds/<%=campground._id%>?_method=PUT"
+    method="POST"
+  >
     <label class="label-text" for="details">Edit Details</label>
-    <textarea name="details" id="details" cols="30" rows="10">
+    <textarea
+      class="input-text"
+      name="details"
+      id="details"
+      cols="30"
+      rows="10"
+    >
 <%=campground.details%></textarea
     >
     <label class="label-text" for="imageURL">Edit Image URL</label>
-    <input type="text" name="imageURL" value="<%=campground.imageURL%>" />
+    <input
+      class="input-text"
+      type="text"
+      name="imageURL"
+      value="<%=campground.imageURL%>"
+    />
 
     <button type="submit">Edit Campsight</button>
   </form>

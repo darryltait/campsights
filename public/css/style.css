@@ -48,8 +48,8 @@ body {
 }
 
 #show-image {
-  max-width: 60%;
-  height: auto;
+  width: 60%;
+  /* height: auto; */
 }
 
 #new {
@@ -65,10 +65,13 @@ body {
   margin-left: 50px;
 }
 
-h1,
-h2 {
+h1 {
   font-family: "Catamaran", sans-serif;
   color: #fff;
+}
+
+h2 {
+  color: rgb(27, 94, 32);
 }
 
 main {
@@ -78,11 +81,12 @@ main {
 }
 
 #welcome {
-  margin: 25px auto;
+  margin: 40px auto;
+  color: #fff;
 }
 
 #intro h5 {
-  margin: 0px auto 0px;
+  margin: 20px auto 0px;
   width: 75%;
   color: #fff;
   line-height: 2rem;
@@ -102,7 +106,9 @@ main {
 
 .box > img {
   width: 80%;
+  height: 200px;
   margin: 10px auto;
+  /* border: 3px solid blue; */
 }
 
 .box-bottom {
@@ -120,6 +126,11 @@ main {
 
 .cg {
   font-family: "Catamaran", sans-serif;
+  color: rgb(27, 94, 32);
+}
+
+.cg-details {
+  font-size: 1.25rem;
 }
 
 button {
@@ -168,7 +179,6 @@ footer {
 
 #info .input-text {
   font-size: 24px;
-  color: orange;
 }
 /*
 .card .card-content .card-title {

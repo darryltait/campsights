@@ -13,7 +13,7 @@
 
     <% if(user.name === campground.createdBy.name) { %>
     <form action="/campgrounds/<%=campground._id%>/edit" method="GET">
-      <button type="submit">Edit Campsight</button>
+      <button class="edit-add-btn" type="submit">Edit Campsight</button>
     </form>
     <% } %>
   </div>

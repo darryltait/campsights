@@ -2,24 +2,23 @@
 
 <h2 class="index-title">All Campsights</h2>
 <main id="container">
-    <% campgrounds.forEach(function(cg) { %>
-    <div class="box">
-        <h5 class="cg"><%= cg.cgName %></h5>
-        <img src="<%= cg.imageURL %>" alt="<%=cg.cgName%>">
+  <% campgrounds.forEach(function(cg) { %>
+  <div class="box">
+    <h5 class="cg"><%= cg.cgName %></h5>
+    <img class="site-images" src="<%= cg.imageURL %>" alt="<%=cg.cgName%>" />
 
-        <p>Location: <%= cg.location %></p>
+    <p>Location: <%= cg.location %></p>
 
-        <div class="box-bottom">
-            <a href="/campgrounds/<%=cg._id%>">Details</a>
-            <% if(user.name === cg.createdBy.name) { %>
-            <form action="/campgrounds/<%=cg._id%>?_method=DELETE" method="post">
-                <button type="submit">Delete</button>
-            </form>
-            <% } %>
-        </div>
+    <div class="box-bottom">
+      <a href="/campgrounds/<%=cg._id%>">Details</a>
+      <% if(user.name === cg.createdBy.name) { %>
+      <form action="/campgrounds/<%=cg._id%>?_method=DELETE" method="post">
+        <button type="submit">Delete</button>
+      </form>
+      <% } %>
     </div>
-    <% }) %>
-
+  </div>
+  <% }) %>
 </main>
 
 <%- include('../partials/footer') %>

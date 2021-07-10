@@ -39,7 +39,7 @@ textarea {
       rgba(0, 0, 0, 0)
     ),
     url("/images/160803_OR-PSX_20160803_200312.jpg"); */
-  background-image: url("/images/campsights_bkg.jpg");
+  background-image: url("/images/campsights-bkg.jpg");
   background-size: cover;
   background-position: center center;
   height: 80vh;
